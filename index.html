@@ -25,6 +25,15 @@
 	<!-- Experience Counter JS -->
 	<script src="assets/js/experience-counter.js"></script>
 
+	<style>
+		.resume-progress {
+			height: 5px;
+		}
+		
+		.resume-progress-bar {
+			height: 100%;
+		}
+	</style>
 </head> 
 
 
@@ -61,7 +70,11 @@
 									<section class="resume-summary-section resume-section">
 										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-person me-2"></i>О себе</h3>
 										<div class="resume-summary-desc">
-											QA Engineer с более чем <span id="experience-text"></span> опыта в обеспечении качества сложных IT-продуктов. Специализируюсь на автоматизированном тестировании с использованием современных инструментов (Playwright, Python, JavaScript) и методологии BDD. Успешно реализовал автоматизацию в сферах облачных технологий и промышленной автоматизации. Опыт работы с микросервисной архитектурой, CI/CD пайплайнами и различными методологиями разработки (Agile, Scrum). Стремлюсь к постоянному развитию и внедрению инновационных подходов к тестированию.
+										<!-- QA Engineer с более чем 
+										<span id="experience-text"></span> 
+										опыта в сфере IT и тестирования IT-продуктов. Специализируюсь на автоматизированном тестировании с использованием Playwright, Python, JavaScript и методологии BDD. Успешно реализовал автоматизацию в сферах облачных технологий и промышленной автоматизации. Опыт работы с микросервисной архитектурой, CI/CD пайплайнами и различными методологиями разработки (Agile, Scrum). Стремлюсь к постоянному развитию и внедрению инновационных подходов к тестированию.
+										-->
+										Инженер по тестированию с фокусом на автоматизацию (Python/JavaScript, Playwright, BDD) и опытом построения автотестов «с нуля» для web‑систем. Работал с высоконагруженными системами мониторинга, облачной инфраструктурой, страховыми продуктами и сервисами бронирования. Умею структурировать и стандартизировать тестовую документацию, выстраивать онбординг и процессы для QA‑команд, а также идентифицировать слабые места в производительности и интеграциях.
 										</div>
 									</section><!--//resume-section-->
 									<hr>
@@ -233,49 +246,60 @@
 								</div><!--//col-8-->
 								<div class="col-12 col-lg-4 ps-lg-4">
 									
-									<section class="resume-skills-section resume-section">
-										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-gear me-2"></i>Технический стек</h3>
-										
-										<ul class="list-unstyled">
-								        <li class="mb-2">
-								            <div class="resume-skill-name">Python</div>
-											<div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 70%"></div>
-											</div>
-								        </li>
-								        <li class="mb-2">
-								            <div class="resume-skill-name">JavaScript</div>
-								            <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 60%"></div>
-											</div>
-									        
-								        </li>
-								        <li class="mb-2">
-								            <div class="resume-skill-name">Java</div>
-									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 40%"></div>
-											</div>
-								        </li>
-								        <li class="mb-2">
-								            <div class="resume-skill-name">Playwright</div>
-									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 70%"></div>
-											</div>
-								        </li>
-								        <li class="mb-2">
-								            <div class="resume-skill-name">SQL</div>
-									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 65%"></div>
-											</div>
-								        </li>
-								        <li class="mb-2">
-								            <div class="resume-skill-name">Git</div>
-									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 70%"></div>
-											</div>
-								        </li>
 
-							        </ul>
+
+									<section class="resume-skills-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3">
+										<i class="resume-section-heading-icon bi bi-gear me-2"></i>Технический стек
+										</h3>
+									
+										<ul class="list-unstyled">
+									
+										<li class="mb-2">
+											<div class="resume-skill-name">Python</div>
+											<div class="progress resume-progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+											<div class="progress-bar resume-progress-bar" style="width: 80%"></div>
+											</div>
+										</li>
+									
+										<li class="mb-2">
+											<div class="resume-skill-name">Playwright</div>
+											<div class="progress resume-progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+											<div class="progress-bar resume-progress-bar" style="width: 80%"></div>
+											</div>
+										</li>
+									
+										<li class="mb-2">
+											<div class="resume-skill-name">JavaScript / TypeScript</div>
+											<div class="progress resume-progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+											<div class="progress-bar resume-progress-bar" style="width: 60%"></div>
+											</div>
+										</li>
+									
+										<li class="mb-2">
+											<div class="resume-skill-name">SQL (PostgreSQL, MongoDB)</div>
+											<div class="progress resume-progress" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+											<div class="progress-bar resume-progress-bar" style="width: 65%"></div>
+											</div>
+										</li>
+									
+										<li class="mb-2">
+											<div class="resume-skill-name">Git</div>
+											<div class="progress resume-progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+											<div class="progress-bar resume-progress-bar" style="width: 70%"></div>
+											</div>
+										</li>
+									
+										<li class="mb-2">
+											<div class="resume-skill-name">Java (RestAssured, базовый UI)</div>
+											<div class="progress resume-progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+											<div class="progress-bar resume-progress-bar" style="width: 30%"></div>
+											</div>
+										</li>
+									
+										</ul>
+									</section>
+									
 										
 									</section><!--//resume-section-->
 									
@@ -284,30 +308,29 @@
 									<section class="resume-skills-section resume-section">
 										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-person-gear me-2"></i>Проф. навыки</h3>
 										<ul class="list-inline">
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">Автоматизация тестирования</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">Функциональное тестирование</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Автоматизация тестирования</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Функциональное тестирование</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Playwright</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Python</span></li>
-											<li class="list-inline-item"><span class="badge resume-skill-badge">Locust</span></li>
-											<li class="list-inline-item"><span class="badge resume-skill-badge">LLM</span></li>
-								            <!-- <li class="list-inline-item"><span class="badge resume-skill-badge">Мобильное тестирование</span></li> -->
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">REST API</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">PostgreSQL</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">REST API</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">BDD (Gherkin, Cucumber, Behave)</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Postman</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">PostgreSQL</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">MongoDB</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">BDD tests</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">Postman</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">Docker</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">Xray / Zephyr / TestRail</span></li>
-								            <li class="list-inline-item"><span class="badge resume-skill-badge">Jira / Redmine</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Locust</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Docker</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Git</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Xray / Zephyr / TestRail</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Jira / Redmine</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Agile / Scrum / Kanban</span></li>
-							            </ul>
+
+										</ul>
 									</section><!--//resume-section-->
 									
 									<hr>
 									
 									<section class="resume-projects-section resume-section">
-										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-code-slash me-2"></i>Проекты и репозитории</h3>
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-code-slash me-2"></i>Проекты</h3>
 										
 										<div class="item">
 											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/first-api-python" target="_blank">Fastapi repo</a></h4>
