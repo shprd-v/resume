@@ -36,22 +36,31 @@
 	</style>
 </head> 
 
-
 <body class="light-mode">
-	
+		
 	<div class="container-fluid">
-			
+	
+
+		
 			<div class="main-content-wrapper">
+			
 				<div class="container-fluid">
 					<div class="top-bar text-center position-relative">
 						
 					</div><!--//top-bar-->
-			
-					<div class="resume-wrapper mx-auto rounded-2" style="margin-top: 10px !important; padding-top: 30px !important;;">
+			<!-- Кнопка переключения темы -->
+
+
+					<div class="resume-wrapper mx-auto rounded-2" style="margin-top: 25px !important; padding-top: 30px !important;;">
 						<div class="resume-header px-4 px-lg-5">
 							<div class="resume-profile-holder text-center">
-								<!-- <img class="resume-profile-pic rounded-circle" src="assets/images/profile.png" alt="image"> -->
-								
+								<img class="resume-profile-pic rounded-circle" src="assets/images/profile.png" alt="image">
+								<br><br>
+<button id="theme-toggle"
+type="button"
+class="btn btn-sm btn-outline-light position-absolute end-0 top-0 m-3">
+🌙 
+</button>
 								<h2 class="resume-name text-Аuppercase">Владимир Капустин</h2>
 								<div class="resume-role-title text-uppercase">Middle QA Automation Engineer</div>
 								<div class="resume-contact mt-4">
@@ -70,11 +79,7 @@
 									<section class="resume-summary-section resume-section">
 										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-person me-2"></i>О себе</h3>
 										<div class="resume-summary-desc">
-										<!-- QA Engineer с более чем 
-										<span id="experience-text"></span> 
-										опыта в сфере IT и тестирования IT-продуктов. Специализируюсь на автоматизированном тестировании с использованием Playwright, Python, JavaScript и методологии BDD. Успешно реализовал автоматизацию в сферах облачных технологий и промышленной автоматизации. Опыт работы с микросервисной архитектурой, CI/CD пайплайнами и различными методологиями разработки (Agile, Scrum). Стремлюсь к постоянному развитию и внедрению инновационных подходов к тестированию.
-										-->
-										Инженер по тестированию с фокусом на автоматизацию (Python/JavaScript, Playwright, BDD) и опытом построения автотестов «с нуля» для web‑систем. Работал с высоконагруженными системами мониторинга, облачной инфраструктурой, страховыми продуктами и сервисами бронирования. Умею структурировать и стандартизировать тестовую документацию, выстраивать онбординг и процессы для QA‑команд, а также идентифицировать слабые места в производительности и интеграциях.
+											Инженер по тестированию с фокусом на автоматизацию web‑систем (Python/JavaScript, Playwright, BDD) и опытом построения фреймворков и автотестов «с нуля» под разные домены. Работал с высоконагруженными системами мониторинга, облачной инфраструктурой (Kubernetes, Docker), промышленным оборудованием, страховыми продуктами и сервисами бронирования. Умею выстраивать автотесты и процессы вокруг них: CI/CD пайплайны, регресс и интеграционное тестирование, стандартизацию QA‑документации и онбординга. Ориентируюсь на измеримый эффект — сокращение ручного регресса, ускорение релизов и повышение стабильности за счёт качественной автоматизации и анализа причин инцидентов.
 										</div>
 									</section><!--//resume-section-->
 									<hr>
@@ -83,9 +88,9 @@
 										<!-- <h2 class="resume-position-title mb-1">Мой профессиональный путь начался с технической поддержки третьего уровня. Затем я повысил квалификацию и успешно перешел в сферу QA аутстаффинга. Детальная информация о проектах и моём опыте представлена ниже.<br>
 											</h2> -->
 											<div class="resume-summary-desc">
-												Мой профессиональный путь начался с технической поддержки третьего уровня. Затем я повысил квалификацию и успешно перешел в сферу QA аутстаффинга. Детальная информация о проектах и моём опыте представлена ниже.<br>
+												
 											</div>
-											<br>
+										
 										<div class="resume-timeline position-relative">
 										    <article class="resume-timeline-item position-relative pb-5">
 											    
@@ -93,152 +98,73 @@
 												    
 												    <div class="resume-position-meta d-flex justify-content-between mb-1">
 													    <div class="resume-position-time">Апрель 2021 - Настоящее время</div>
-													    <div class="resume-company-name">Аутстафф - проектная деятельность. Middle QA Manual/Auto</div>
+													    <div class="resume-company-name"> Middle QA Manual/Auto</div>
 												    </div>
-													<!-- <div>
-														<h3 class="resume-position-title mb-1">Проекты</h2>
-													<ul class="resume-timeline-list">
-														<li>Система мониторинга автотранспорта</li>
-														<li>Промышленное оборудование: автоматизация тестирования</li>
-														<li>Облачные технологии: сервера и виртуальные машины</li>
-														<li>Программа учёта страховых случаев</li>
-														<li>Система формирования документов учёта недвижимости</li>
+													<h3 class="resume-position-title mb-1">Middle QA Manual/Auto</h3>
 
-													</div> -->
-											        <h3 class="resume-position-title mb-1">Система мониторинга и реестров</h3>
+											        <h3 class="resume-position-title mb-1">Зона ответственности и достижения:</h3>
+												<b></b>
 
 											    </div><!--//resume-timeline-item-header-->
 											    <div class="resume-timeline-item-desc">
 												    <ul class="resume-timeline-list">
-													    <li>Тестирование высоконагруженной системы мониторинга автотранспорта и системы учёта полевых сотрудников с покрытием 95% критических сценариев</li>
-													    <!-- <li>Разработка комплексной документации в Confluence: создание руководства по онбордингу (сократил время адаптации новых сотрудников на 40%) и стандартов тестирования</li> -->
-													    <li>Создание и поддержка 200+ тест-кейсов для функционального тестирования с использованием xRay</li>
-													    <li>Проверка исправления дефектов и выполнение задач по тестированию в рамках Agile-спринтов</li>
-													    <li>Разработка скриптов для мониторинга и измерения времени отклика сервисов на Python + Playwright (сократил время проверки с 2 часов до 15 минут)</li>
-													    <li>Внедрение и адаптация документации отдела QA для всех проектов компании. Стандартизировал процесс онбординга.</li>
-														<li>Внедрение системы автотестов на behave + playwright</li>
-														<li>Запуск деплоев бэкэнд и фронтенд сборок через gitlab пайплайны</li>
-														<li>Настройка и поддержка выделенного сервера unix для запуска рабочих скриптов и метрик по cron'у</li>
+													    <li>Проектировал и развивал автотесты для web‑систем на Python/JavaScript (Playwright, BDD: behave, cucumber), обеспечив покрытие ключевых сценариев.</li>
+													    <li>Вёл 200+ тест‑кейсов в Xray и других TMS, выстроил регресс и интеграционное тестирование с устойчивым прохождением на уровне 90–95% и предсказуемыми сроками релизов.</li>
+													    <li>Стандартизировал QA‑документацию (онбординг‑гайды, чек‑листы, шаблоны тест‑документов), сократив время ввода новых тестировщиков и упростив масштабирование команд.</li>
+														<li>Проводил функциональное, интеграционное и кросс‑браузерное тестирование (Chrome, Firefox, Safari, Edge, Yandex, Android‑клиенты) для высоконагруженных систем, обеспечивая стабильность ключевых пользовательских сценариев.</li>
+														<li>Разработал скрипт на Python + Playwright для автоматического измерения времени отклика ключевых сервисов, сократив ручную проверку с ~2 часов до 15 минут. Создал дашборд в Grafana с графиками по времени ответа и стабильности работы системы, на основе метрик выявил проблему в коде, из‑за которой часть страниц загружалась нестабильно и заметно дольше нормы.</li>
+														<li>Тестировал функционал создания бумажного и цифрового документооборота в средах ЖКХ и страхования с интеграцией сторонних справочников</li>
+														<li>Тестировал REST/SOAP API с использованием Postman, Swagger и SoapUI для проверки корректности интеграций и ответов сервисов.</li>
+														<li>Работал с базами данных (PostgreSQL, MongoDB, Oracle), писал SQL-запросы с использованием JOIN и агрегирующих функций (COUNT и др.) для выборки, сверки и анализа данных.</li>
+														<li>Анализировал логи в ELK, k8s-pods и на удалённых серверах (SSH, tail, catalina) для диагностики поведения системы.</li>
+														<li>Проводил комплексный анализ инцидентов на основе данных из API, БД и логов для поиска и устранения первопричин.</li>
+														<li>Настроил и поддерживал выделенный сервер unix для запуска рабочих скриптов и метрик по cron'у</li>
 													</ul>
 												    
 											    </div><!--//resume-timeline-item-desc-->
-		
+												<h3 class="resume-position-title mb-1">Ключевые проекты:</h3>
+												<b>Промышленное оборудование — фреймворк автотестов на Playwright</b>
+													<ul class="resume-timeline-list">
+														<li>Единолично спроектировал и реализовал архитектуру фреймворка автоматизации (Playwright + JavaScript + Cucumber) для эмулятора промышленного конвейерного оборудования.</li>
+														<li>Реализовал BDD‑подход (feature‑файлы, шаги, сценарии), автоматизировав около 80% бизнес‑сценариев и сократив трудозатраты на ручную проверку</li>													</ul>
+											
+												<b>Облачные технологии — управление серверами и виртуальными машинами</b>
+													<ul class="resume-timeline-list">
+														<li>Тестировал систему для управления облочной инфраструктуры: функциональное и интеграционное тестирование.													</li>
+														<li>Готовил комплексную тестовую документацию с покрытием до 90% функциональности, автоматизировал создание тестовых данных через Playwright + JavaScript.</li>
+														<li>Проводил API‑тестирование, проверял интеграции и состояния удалённых виртуальных серверов по SSH, анализировал логи и метрики.</li>
+													</ul>
 										    </article><!--//resume-timeline-item-->
 								    
-										    <article class="resume-timeline-item position-relative pb-5">
-
-											    <div class="resume-timeline-item-header mb-2">
-												    
-												    <div class="resume-position-meta d-flex justify-content-between mb-1">
-												    </div>
-											        <h3 class="resume-position-title mb-1">Промышленное оборудование - автоматизация тестирования на playwright</h3>
-
-											    </div><!--//resume-timeline-item-header-->
-											    <div class="resume-timeline-item-desc">
-												    <ul class="resume-timeline-list">
-														<li>Автоматизация тестирования эмулятора промышленного оборудования конвейерной ленты (разработка фреймворка, написание тестов, единственный QA Automation на первых этапах).</li>													    <li>Проектирование и реализация архитектуры фреймворка автоматизации с учётом требований заказчика (Playwright + Cucumber), что сократило время разработки автотестов на 60%</li>
-													    <li>Разработка кода для автоматизации тестирования по BDD методологии на JavaScript + Playwright + Cucumber с покрытием 80% бизнес-сценариев</li>
-													    <li>Создание и поддержка 50+ BDD feature-файлов с детальными описаниями проверок по бизнес-сценариям</li>
-													    <li>Тестирование интеграций между микросервисами и системы управления оборудованием с выявлением критических дефектов</li>
-													    <li>Организация и ведение репозитория автотестов в GitLab с соблюдением best practices и code review процессов</li>
-													    <li>Настройка CI/CD пайплайнов в Jenkins для автоматического запуска тестов, что сократило время релиза на 30%</li>
-												    </ul>
-												    
-											    </div><!--//resume-timeline-item-desc-->
+										    
 		
-										    </article><!--//resume-timeline-item-->
-										    <article class="resume-timeline-item position-relative pb-5">
-
-											    <div class="resume-timeline-item-header mb-2">
-												    
-												    <div class="resume-position-meta d-flex justify-content-between mb-1">
-												    </div>
-											        <h3 class="resume-position-title mb-1">Облачные технологии - сервера, виртуальные машины.</h3>
-
-											    </div><!--//resume-timeline-item-header-->
-											    <div class="resume-timeline-item-desc">
-												    <ul class="resume-timeline-list">
-													    <li>Тестирование коробочного решения для управления облачными вычислительными мощностями (Kubernetes, Docker) внутри предприятия</li>
-													    <li>Анализ требований по документации и подготовка комплексной тестовой документации с покрытием 90% функциональности</li>
-													    <li>Проведение функциональных и нефункциональных видов тестирования (производительность, безопасность, нагрузочное)</li>
-													    <li>Автоматизация создания тестовых данных через playwright + javascript</li>
-														<li>Тестирование REST API интеграций с использованием Postman, Swagger</li>
-													    <li>Регулярное тестирование удаленных виртуальных серверов через SSH (Putty) и мониторинг состояния инфраструктуры</li>
-													    <li>Анализ логов на удаленных серверах (k8s-pod-shell) в реальном времени и за определенный период</li>
-													    <li>Регулярное проведение регресса и интеграционного тестирования с 95% успешностью прохождения тестов</li>
-														<li>Кросс-браузерное тестирование интерфейса сервиса (Chrome, Firefox, Safari, Edge, Yandex)</li>
-												    </ul>
-												    
-											    </div><!--//resume-timeline-item-desc-->
-		
-										    </article><!--//resume-timeline-item-->
-										    <article class="resume-timeline-item position-relative pb-5">
-
-											    <div class="resume-timeline-item-header mb-2">
-												    
-												    <div class="resume-position-meta d-flex justify-content-between mb-1">
-												    </div>
-											        <h3 class="resume-position-title mb-1">Программа учёта страховых случаев</h3>
-
-											    </div><!--//resume-timeline-item-header-->
-											    <div class="resume-timeline-item-desc">
-												    <ul class="resume-timeline-list">
-													    <li>Тестирование веб-конструктора страховых продуктов - критически важного внутреннего сервиса для страховой компании по урегулированию убытков</li>
-													    <li>Углубленное изучение предметной области страхования и разработка тестовых сценариев с учетом специфики бизнес-процессов</li>
-													    <li>Работа с требованиями и спецификациями, разработка и актуализация тестовой документации с покрытием 85% функциональности</li>
-													    <li>Тестирование REST/SOAP API, подготовка и отправка запросов через Postman и SoapUI</li>
-													    <li>Написание сложных SQL скриптов для создания, корректировки и валидации данных в БД (Oracle, PostgreSQL)</li>
-													    <li>Анализ логов работы системы и отдельных компонентов с использованием ELK stack и выявление root cause проблем</li>
-													    <li>Подготовка и проведение демо нового функционала для заказчиков с 100% успешностью презентаций</li>
-												    </ul>
-												    
-											    </div><!--//resume-timeline-item-desc-->
-		
-										    </article><!--//resume-timeline-item-->
-										    <article class="resume-timeline-item position-relative pb-5">
-
-											    <div class="resume-timeline-item-header mb-2">
-												    
-												    <div class="resume-position-meta d-flex justify-content-between mb-1">
-												    </div>
-											        <h3 class="resume-position-title mb-1">Система формирования документов учёта недвижимости</h3>
-
-											    </div><!--//resume-timeline-item-header-->
-											    <div class="resume-timeline-item-desc">
-												    <ul class="resume-timeline-list">
-													    <li>Тестирование комплексной системы ЖКХ - веб-сервисов для учета и инспекции зданий</li>
-													    <li>Тестирование связки справочников и формирование документов отчетности с проверкой соответствия законодательным требованиям</li>
-													    <li>Проведение функционального тестирования сервисов (фронтэнд и интеграция с бекэндом) с покрытием 80% сценариев</li>
-													    <li>Кросс-браузерное тестирование интерфейса сервисов (Chrome, Firefox, Safari, Edge) и Android приложения</li>
-													    <li>Работа с базами данных (MongoDB, PostgreSQL), подготовка тестовых данных, написание SQL запросов средней сложности</li>
-													    <!-- <li>Тестирование корректности заполнения базы данных и целостности данных с использованием транзакций и триггеров</li> -->
-												    </ul>
-												    
-											    </div><!--//resume-timeline-item-desc-->
-		
-										    </article><!--//resume-timeline-item-->
 										    <article class="resume-timeline-item position-relative">
 
 											    <div class="resume-timeline-item-header mb-2">
 												    
 												    <div class="resume-position-meta d-flex justify-content-between mb-1">
 													    <div class="resume-position-time">Декабрь 2018 - Март 2021</div>
-													    <div class="resume-company-name">ООО ЦРПО. Агрегатор туристических предложений</div>
+													    <div class="resume-company-name">ООО "ЦРПО". Агрегатор туристических предложений</div>
 												    </div>
 											        <h3 class="resume-position-title mb-1">Support engineer L3</h3>
 
 											    </div><!--//resume-timeline-item-header-->
 											    <div class="resume-timeline-item-desc">
 												    <ul class="resume-timeline-list">
-													    <li>Тестирование высоконагруженного веб-портала туристических бронирований - сервиса по бронированию авиа-билетов, жд-билетов и мест в отелях</li>
-													    <li>Проведение функционального и нефункционального тестирования UI форм и компонентов с покрытием 75% функциональности</li>
-													    <li>Работа с базами данных (PostgreSQL, MongoDB), написание SQL запросов для выборки информации и валидации данных</li>
-													    <li>Тестирование логики интеграции внешних сервисов (REST и SOAP) с системой бронирования и проверка корректности расчетов</li>
-													    <li>Мониторинг состояния системы (Zabbix,Grafana) / Elk logstash (kibana)</li>
-														<li>Анализ воронки продаж, ежедневный репорт о состоянии системы и наличии bottlenecks</li>
-													    <li>Тестирование Android-клиента для сервиса с проверкой основных пользовательских сценариев</li>
-													    <li>Техническая поддержка сотрудников и пользователей веб-сервисов компании с решением 100% обращений в течении заложенного времени</li>
+														<li>Оказывал техническую поддержку сотрудникам и пользователям веб-сервисов компании, закрывая 100% обращений в рамках SLA.</li>
+														<li>Проводил анализ логов, локализовал дефекты, составлял баг-репорты.</li>
+														<li>Работал с базами данных (PostgreSQL, MongoDB), писал SQL-запросы для выборки информации и валидации данных.</li>
+														<li>Проводил функциональное и нефункциональное тестирование UI-форм и компонентов.</li>
+														<li>Тестировал партнёрские интеграции в продукт компании (REST и SOAP).</li>
+														<li>Тестировал высоконагруженный веб-портал туристических бронирований (авиа, ЖД, отели).</li>
+														<li>Мониторил состояние системы (Zabbix, Grafana) и логи (ELK, Logstash, Kibana).</li>
 													</ul>
+													<b>Достижения:</b>
+													<ul class="resume-timeline-list">
+														<li>Проводил анализ воронки продаж, подсветил проблемные места интеграций.</li>
+														<li>Проводил онбординг и наставничество новых сотрудников, сопровождал их в первые месяцы работы и помогал им быстрее освоить процессы и задачи команды.</li>
+													</ul>
+													
 												    
 											    </div><!--//resume-timeline-item-desc-->
 		
@@ -280,7 +206,7 @@
 								        <li class="mb-2">
 								            <div class="resume-skill-name">SQL</div>
 									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
-											  <div class="progress-bar resume-progress-bar" style="width: 55%"></div>
+											<div class="progress-bar resume-progress-bar" style="width: 55%"></div>
 											</div>
 										</li>
 									
@@ -318,10 +244,9 @@
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Postman</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">PostgreSQL</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">MongoDB</span></li>
-											<li class="list-inline-item"><span class="badge resume-skill-badge">Locust</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Docker</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Git</span></li>
-											<li class="list-inline-item"><span class="badge resume-skill-badge">Xray / Zephyr / TestRail</span></li>
+											<li class="list-inline-item"><span class="badge resume-skill-badge">Xray / Zephyr / TestRail / Test IT</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Jira / Redmine</span></li>
 											<li class="list-inline-item"><span class="badge resume-skill-badge">Agile / Scrum / Kanban</span></li>
 
@@ -333,54 +258,26 @@
 									<section class="resume-projects-section resume-section">
 										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-code-slash me-2"></i>Проекты</h3>
 										
-										<div class="item">
-											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/first-api-python" target="_blank">Fastapi repo</a></h4>
+										<!-- <div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/" target="_blank">Примеры автоматизации</a></h4>
 											<div class="item-desc">
-												Прогресс изучения fastapi.
+												Репозиторий с тестами на playwright
+											</div>
+										</div> -->
+
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="" target="_blank">Бот телеграм</a></h4>
+											<div class="item-desc">
+												<a href="https://t.me/covletters_bot">@covletters_bot</a> - telegram бот на python с интеграцией внешних API для генерации сопроводительных писем к резюме.
 											</div>
 										</div>
 
 										<div class="item">
-											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="" target="_blank">Coverage letter generator</a></h4>
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/weatherBot" target="_blank">Прогноз погоды</a></h4>
 											<div class="item-desc">
-												<a href="https://t.me/covletters_bot">@covletters_bot</a> - telegram бот на python с интеграцией внешних API для генерации сопроводительных писем.
+												telegram бот на javascript с интеграцией yandex.погода и gismeteo. Практический пример создания пользовательского интерфейса и работы с REST API.
 											</div>
-										</div>
-
-										<div class="item">
-											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/weatherBot" target="_blank">Weather Bot</a></h4>
-											<div class="item-desc">
-												Telegram бот на JavaScript с интеграцией внешних API. Практический пример создания пользовательского интерфейса и работы с REST API.
-											</div>
-										</div><!--//item-->
-										<!-- Daily Byte Solutions -->
-										<div class="item">
-											<h4 class="item-heading">
-												<i class="item-icon bi bi-square-fill me-2"></i>
-												<a href="https://github.com/shprd-v/daily-byte" target="_blank">Daily Byte Solutions</a>
-											</h4>
-											<div class="item-desc">
-												Решения алгоритмических задач на Python.
-											</div>
-										</div>
-										<div class="item">
-											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/learningPython" target="_blank">Python Learning</a></h4>
-											<div class="item-desc">
-												Практика на Python: алгоритмы, структуры данных, автоматизация тестирования.
-											</div>
-										</div><!--//item-->
-
-										<!-- Java Automation -->
-										<div class="item">
-											<h4 class="item-heading">
-												<i class="item-icon bi bi-square-fill me-2"></i>
-												<a href="https://github.com/shprd-v/automation-examples/tree/main/Java-web" target="_blank">Java Automation Examples</a>
-											</h4>
-											<div class="item-desc">
-												UI-автотесты на Java + JUnit + Selenium WebDriver.
-											</div>
-										</div>
-										
+										</div><!--//item-->										
 											
 									</section>
 									
@@ -401,7 +298,7 @@
 									
 									<section class="resume-lang-section resume-section">
 										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-translate me-2"></i>Языки</h3>
-										 <ul class="list-unstyled resume-lang-list">
+										<ul class="list-unstyled resume-lang-list">
 										    <li class="mb-2">
 										        <div class="resume-lang-name">Русский</div>
 										        <div class="resume-level-indicator row gx-0 flex-nowrap">
@@ -417,7 +314,7 @@
 											        <div class="col"><span class="item item-full"></span></div>
 										        </div><!--//resume-level-indicator-->
 										    </li>
-										     <li class="mb-2">
+											<li class="mb-2">
 										        <div class="resume-lang-name">Английский</div>
 										        <div class="resume-level-indicator row gx-0 flex-nowrap">
 											        <div class="col"><span class="item item-full"></span></div>
@@ -448,8 +345,48 @@
 		</div><!--//row-->
 	
 	</div><!--//container-->
+
+	<script>
+		(function () {
+			const body = document.body;
+			const btn = document.getElementById('theme-toggle');
 	
-	<!-- <footer class="footer text-center py-4">
-	</footer> -->
+			if (!body || !btn) return;
+	
+			const savedTheme = localStorage.getItem('theme');
+	
+			function applyTheme(theme) {
+				if (theme === 'dark') {
+					body.classList.remove('light-mode');
+					body.classList.add('dark-mode');
+					btn.textContent = '☀️';
+				} else {
+					body.classList.remove('dark-mode');
+					body.classList.add('light-mode');
+					btn.textContent = '🌙';
+				}
+			}
+	
+			// 1. Явный выбор пользователя
+			if (savedTheme === 'dark' || savedTheme === 'light') {
+				applyTheme(savedTheme);
+			} else {
+				// 2. Предпочтения системы/браузера
+				const prefersDark = window.matchMedia &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches;
+	
+				applyTheme(prefersDark ? 'dark' : 'light');
+			}
+	
+			// 3. Переключение по кнопке
+			btn.addEventListener('click', function () {
+				const isDark = body.classList.contains('dark-mode');
+				const nextTheme = isDark ? 'light' : 'dark';
+				applyTheme(nextTheme);
+				localStorage.setItem('theme', nextTheme);
+			});
+		})();
+	</script>
+	
 
 </body>
