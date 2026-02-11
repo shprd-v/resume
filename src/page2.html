@@ -3,13 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Page</title>
+    <title>Пример оформления баг-репорта</title>
 </head>
 <body>
-    <h1>Second Page</h1>
-    <p>This is the second page content.</p>
+    <h1>Пример оформления баг-репорта</h1>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баг-репорт #BUG-123</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1, h2 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        .priority-high { background-color: #ffebee; }
+        .steps { background-color: #f9f9f9; }
+        .attachments img { max-width: 300px; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Баг-репорт #BUG-123</h1>
     
+    <table>
+        <tr>
+            <th>Поле</th>
+            <th>Значение</th>
+        </tr>
+        <tr class="priority-high">
+            <td><strong>Заголовок (Summary)</strong></td>
+            <td>Кнопка "Купить" не реагирует на клик в корзине при добавлении товара</td>
+        </tr>
+        <tr>
+            <td><strong>Проект (Project)</strong></td>
+            <td>Online Store v2.1</td>
+        </tr>
+        <tr>
+            <td><strong>Компонент (Component)</strong></td>
+            <td>Корзина / Checkout</td>
+        </tr>
+        <tr>
+            <td><strong>Версия (Version)</strong></td>
+            <td>2.1.5 (build #456)</td>
+        </tr>
+        <tr>
+            <td><strong>Серьезность (Severity)</strong></td>
+            <td>Major (блокирует покупку)</td>
+        </tr>
+        <tr>
+            <td><strong>Приоритет (Priority)</strong></td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td><strong>Статус (Status)</strong></td>
+            <td>New</td>
+        </tr>
+        <tr>
+            <td><strong>Автор (Reporter)</strong></td>
+            <td>Иванов И.И. (QA Engineer)</td>
+        </tr>
+        <tr>
+            <td><strong>Дата создания</strong></td>
+            <td>2026-02-11</td>
+        </tr>
+    </table>
+
+    <h2>Описание проблемы</h2>
+    <p>При попытке добавить товар в корзину и перейти к оформлению заказа кнопка "Купить" остается неактивной. Проблема воспроизводится стабильно на всех тест-кейсах с товарами свыше 1000 руб.</p>
+
+    <h2>Окружение (Environment)</h2>
+    <ul>
+        <li>Браузер: Google Chrome 122.0.6261.94</li>
+        <li>OS: Windows 11 (64-bit)</li>
+        <li>URL: https://example.com/cart</li>
+        <li>Разрешение экрана: 1920x1080</li>
+        <li>Сеть: Wi-Fi (стабильное соединение)</li>
+    </ul>
+
+    <h2>Шаги воспроизведения</h2>
+    <ol class="steps">
+        <li>Перейти на главную страницу: https://example.com/</li>
+        <li>Выбрать товар "Ноутбук XYZ" и нажать "Добавить в корзину".</li>
+        <li>Перейти в корзину по ссылке "Корзина" (иконка в хедере).</li>
+        <li>Нажать кнопку "Оформить заказ" / "Купить".</li>
+    </ol>
+
+    <h2>Ожидаемый результат (Expected Result)</h2>
+    <p>Открывается форма оформления заказа с предзаполненными данными из корзины. Товар добавляется в заказ.</p>
+
+    <h2>Фактический результат (Actual Result)</h2>
+    <p>Кнопка "Купить" не реагирует на клик. В консоли браузера (F12 > Console) ошибка: <code>TypeError: Cannot read property 'submit' of null</code>.</p>
+
+    <h2>Прикрепления (Attachments)</h2>
+    <ul>
+        <li><a href="screenshot-error.png">Скриншот ошибки</a> [image]</li>
+        <li><a href="console-log.txt">Лог консоли</a></li>
+        <li><a href="video-repro.mp4">Видео воспроизведения (15 сек)</a></li>
+    </ul>
+
+    <hr>
+    <p><em>Дополнительные заметки: Проблема не воспроизводится в Firefox 121. Требует срочного фикса перед релизом.</em></p>
     <!-- Link back to the main page -->
-    <a href="index.html">Back to Home Page</a>
+    <a href="https://shprd-v.github.io/resume/">Back to Home Page</a>
 </body>
 </html>
