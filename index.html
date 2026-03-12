@@ -43,6 +43,54 @@
         .resume-section-heading i {
             color: #0d6efd;
         }
+        .resume-timeline-item.pb-0 {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .resume-timeline-item.pb-0::after {
+            display: none !important;
+        }
+
+        /* Language toggle button */
+        #lang-toggle {
+            border-radius: 6px;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.5);
+            background: #0d6efd;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        #lang-toggle:hover {
+            background: #0a58ca;
+            transform: translateY(-1px);
+        }
+        #lang-toggle:active {
+            transform: translateY(0);
+        }
+        body.dark-mode #lang-toggle {
+            background: #1e3a5f;
+            border-color: rgba(255,255,255,0.2);
+        }
+        body.dark-mode #lang-toggle:hover {
+            background: #265080;
+        }
+
+        /* Fade transition on language switch */
+        .resume-wrapper {
+            transition: opacity 0.18s ease;
+        }
+        .resume-wrapper.lang-switching {
+            opacity: 0;
+        }
     </style>
 </head> 
 
@@ -53,7 +101,6 @@
         <div class="main-content-wrapper">
             <div class="container-fluid">
                 <div class="top-bar text-center position-relative">
-                    <!-- Кнопка переключения темы вынесена в header, оставляем как есть -->
                 </div><!--//top-bar-->
 
                 <div class="resume-wrapper mx-auto rounded-2" style="margin-top: 25px !important; padding-top: 30px !important;">
@@ -61,15 +108,20 @@
                         <div class="resume-profile-holder text-center">
                             <img class="resume-profile-pic rounded-circle" src="assets/images/profile.png" alt="image">
                             <br><br>
-                            <button id="theme-toggle" type="button" class="btn btn-sm btn-outline-light position-absolute end-0 top-0 m-3">
-                                🌙 
-                            </button>
+                            <div class="position-absolute end-0 top-0 m-3 d-flex flex-column gap-2 align-items-end">
+                                <button id="theme-toggle" type="button" class="btn btn-sm btn-outline-light">
+                                    🌙
+                                </button>
+                                <button id="lang-toggle" type="button">
+                                    🇬🇧 EN
+                                </button>
+                            </div>
                             <h2 class="resume-name text-uppercase">Владимир Капустин</h2>
                             <div class="resume-role-title text-uppercase">Middle+ QA Automation Engineer</div>
                             <div class="resume-contact mt-4">
                                 <ul class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
                                     <li class="list-inline-item me-md-3 me-lg-5"><a href="https://t.me/vladimir362616" target="_blank" class="text-decoration-none"><img src="assets/images/telegram.png" alt="Telegram" class="resume-contact-icon me-2" style="width: 16px; height: 16px;"> @vladimir362616</a></li>
-                                    <li class="list-inline-item me-md-3 me-lg-5"><a href="mailto:silverbeard665.9@yandex.ru" class="text-decoration-none"><img src="assets/images/mail.png" alt="Email" class="resume-contact-icon me-2" style="width: 16px; height: 16px;"> silverbeard665.9@yandex.ru</a></li>
+                                    <li class="list-inline-item me-md-3 me-lg-5"><a href="mailto:vladimir362616@gmail.com" class="text-decoration-none"><img src="assets/images/mail.png" alt="Email" class="resume-contact-icon me-2" style="width: 16px; height: 16px;"> vladimir362616@gmail.com</a></li>
                                     <li class="list-inline-item me-lg-5"><a href="https://github.com/shprd-v" target="_blank" class="text-decoration-none"><img src="assets/images/github.png" alt="GitHub" class="resume-contact-icon me-2" style="width: 16px; height: 16px;"> shprd-v</a></li>
                                 </ul>
                             </div><!--//resume-contact-->
@@ -79,32 +131,39 @@
                     <div class="resume-body p-4 p-lg-5">
                         <div class="row">
                             <div class="col-main col-12 col-lg-8 pe-lg-4">
-                                <!-- О себе (НОВЫЙ, ПЕРЕФРАЗИРОВАННЫЙ ТЕКСТ) -->
+
+                                <!-- О себе -->
                                 <section class="resume-summary-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-person me-2"></i>О себе</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-person me-2"></i>
+                                        <span data-ru="О себе" data-en="About Me">О себе</span>
+                                    </h3>
                                     <div class="resume-summary-desc">
-                                        <p><strong>Middle+ QA Automation Engineer</strong> с 4+ годами опыта в автоматизации тестирования web‑систем. Специализируюсь на построении фреймворков с нуля (Python/JavaScript, Playwright, BDD) и внедрении процессов, которые приносят бизнесу измеримый эффект. Работал в высоконагруженных проектах из разных доменов: облачная инфраструктура (Kubernetes, Docker), промышленное оборудование, страхование, сервисы бронирования.</p>
-                                        <p><strong>Ключевые результаты:</strong></p>
+                                        <p><strong>Middle+ QA Automation Engineer</strong> <span data-ru="с 4+ годами опыта в автоматизации тестирования web‑систем. Специализируюсь на построении фреймворков с нуля (Python/JavaScript, Playwright, BDD) и внедрении процессов, которые приносят бизнесу измеримый эффект. Работал в высоконагруженных проектах из разных доменов: облачная инфраструктура (Kubernetes, Docker), промышленное оборудование, страхование, сервисы бронирования." data-en="with 4+ years of experience in test automation for web systems. Specializing in building frameworks from scratch (Python/JavaScript, Playwright, BDD) and implementing processes that deliver measurable business impact. Worked on high-load projects across multiple domains: cloud infrastructure (Kubernetes, Docker), industrial equipment, insurance, and booking services.">с 4+ годами опыта в автоматизации тестирования web‑систем. Специализируюсь на построении фреймворков с нуля (Python/JavaScript, Playwright, BDD) и внедрении процессов, которые приносят бизнесу измеримый эффект. Работал в высоконагруженных проектах из разных доменов: облачная инфраструктура (Kubernetes, Docker), промышленное оборудование, страхование, сервисы бронирования.</span></p>
+                                        <p><strong><span data-ru="Ключевые результаты:" data-en="Key Achievements:">Ключевые результаты:</span></strong></p>
                                         <ul>
-                                            <li><strong>Сократил время ручного регрессионного тестирования с 2 часов до 15 минут</strong> за счёт разработки скриптов на Python + Playwright и дашбордов в Grafana.</li>
-                                            <li><strong>Автоматизировал 80% бизнес-сценариев</strong> для эмулятора промышленного оборудования, построив архитектуру фреймворка с нуля.</li>
-                                            <li><strong>Обеспечил стабильность прохождения регресса на уровне 90–95%</strong>, что ускорило выход релизов и снизило количество инцидентов в продакшене.</li>
-                                            <li><strong>Внедрил стандарты QA-документации и онбординга</strong>, сократив время адаптации новых тестировщиков.</li>
+                                            <li><strong><span data-ru="Сократил время ручного регрессионного тестирования с 2 часов до 15 минут" data-en="Reduced manual regression testing time from 2 hours to 15 minutes">Сократил время ручного регрессионного тестирования с 2 часов до 15 минут</span></strong> <span data-ru="за счёт разработки скриптов на Python + Playwright и дашбордов в Grafana." data-en="by developing Python + Playwright scripts and Grafana dashboards.">за счёт разработки скриптов на Python + Playwright и дашбордов в Grafana.</span></li>
+                                            <li><strong><span data-ru="Автоматизировал 80% бизнес-сценариев" data-en="Automated 80% of business scenarios">Автоматизировал 80% бизнес-сценариев</span></strong> <span data-ru="для эмулятора промышленного оборудования, построив архитектуру фреймворка с нуля." data-en="for an industrial equipment emulator, building the framework architecture from scratch.">для эмулятора промышленного оборудования, построив архитектуру фреймворка с нуля.</span></li>
+                                            <li><strong><span data-ru="Обеспечил стабильность прохождения регресса на уровне 90–95%" data-en="Maintained regression pass rate at 90–95%">Обеспечил стабильность прохождения регресса на уровне 90–95%</span></strong><span data-ru=", что ускорило выход релизов и снизило количество инцидентов в продакшене." data-en=", which accelerated release cycles and reduced production incidents.">, что ускорило выход релизов и снизило количество инцидентов в продакшене.</span></li>
+                                            <li><strong><span data-ru="Внедрил стандарты QA-документации и онбординга" data-en="Introduced QA documentation and onboarding standards">Внедрил стандарты QA-документации и онбординга</span></strong><span data-ru=", сократив время адаптации новых тестировщиков." data-en=", reducing onboarding time for new QA engineers.">, сократив время адаптации новых тестировщиков.</span></li>
                                         </ul>
-                                        <p>Умею не просто писать тесты, а выстраивать инфраструктуру вокруг них: CI/CD пайплайны (GitLab CI, Jenkins), интеграцию с системами мониторинга (Grafana, Zabbix, ELK), анализ логов и расследование первопричин дефектов. Ориентирован на качество продукта, скорость релизов и эффективность команды. Ищу проект, где смогу применить свою экспертизу для достижения ощутимых улучшений в процессах тестирования.</p>
+                                        <p><span data-ru="Умею не просто писать тесты, а выстраивать инфраструктуру вокруг них: CI/CD пайплайны (GitLab CI, Jenkins), интеграцию с системами мониторинга (Grafana, Zabbix, ELK), анализ логов и расследование первопричин дефектов. Ориентирован на качество продукта, скорость релизов и эффективность команды. Ищу проект, где смогу применить свою экспертизу для достижения ощутимых улучшений в процессах тестирования." data-en="I don't just write tests — I build the infrastructure around them: CI/CD pipelines (GitLab CI, Jenkins), integration with monitoring systems (Grafana, Zabbix, ELK), log analysis and root cause investigation. Focused on product quality, release velocity, and team efficiency. Seeking a project where I can apply my expertise to achieve tangible improvements in testing processes.">Умею не просто писать тесты, а выстраивать инфраструктуру вокруг них: CI/CD пайплайны (GitLab CI, Jenkins), интеграцию с системами мониторинга (Grafana, Zabbix, ELK), анализ логов и расследование первопричин дефектов. Ориентирован на качество продукта, скорость релизов и эффективность команды. Ищу проект, где смогу применить свою экспертизу для достижения ощутимых улучшений в процессах тестирования.</span></p>
                                     </div>
                                 </section>
 
                                 <!-- Ключевые компетенции -->
                                 <section class="resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-star me-2"></i>Ключевые компетенции</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-star me-2"></i>
+                                        <span data-ru="Ключевые компетенции" data-en="Core Competencies">Ключевые компетенции</span>
+                                    </h3>
                                     <div class="resume-summary-desc">
                                         <ul class="resume-timeline-list">
-                                            <li>Построение фреймворков автоматизации с нуля (Playwright + Python/JS, BDD)</li>
-                                            <li><strong>Сокращение времени регрессионной проверки с 2 часов до 15 минут</strong> (скрипт на Python + дашборд Grafana)</li>
-                                            <li>Интеграция автотестов в CI/CD (GitLab CI, Jenkins), настройка Unix-серверов для cron-задач</li>
-                                            <li>Анализ логов (ELK), метрик (Grafana, Zabbix) и расследование инцидентов</li>
-                                            <li>Стандартизация QA-документации и онбординг новых инженеров</li>
+                                            <li><span data-ru="Построение фреймворков автоматизации с нуля (Playwright + Python/JS, BDD)" data-en="Building automation frameworks from scratch (Playwright + Python/JS, BDD)">Построение фреймворков автоматизации с нуля (Playwright + Python/JS, BDD)</span></li>
+                                            <li><span data-ru="Разработка скриптов измерения производительности на Python + Playwright с визуализацией метрик в Grafana" data-en="Developing performance measurement scripts with Python + Playwright and metric visualization in Grafana">Разработка скриптов измерения производительности на Python + Playwright с визуализацией метрик в Grafana</span></li>
+                                            <li><span data-ru="Интеграция автотестов в CI/CD (GitLab CI, Jenkins), настройка Unix-серверов для cron-задач" data-en="Integrating autotests into CI/CD (GitLab CI, Jenkins), configuring Unix servers for cron jobs">Интеграция автотестов в CI/CD (GitLab CI, Jenkins), настройка Unix-серверов для cron-задач</span></li>
+                                            <li><span data-ru="Анализ логов (ELK), метрик (Grafana, Zabbix) и расследование инцидентов" data-en="Log analysis (ELK), metrics (Grafana, Zabbix) and incident investigation">Анализ логов (ELK), метрик (Grafana, Zabbix) и расследование инцидентов</span></li>
+                                            <li><span data-ru="Стандартизация QA-документации и онбординг новых инженеров" data-en="Standardizing QA documentation and onboarding new engineers">Стандартизация QA-документации и онбординг новых инженеров</span></li>
                                         </ul>
                                     </div>
                                 </section>
@@ -112,125 +171,116 @@
 
                                 <!-- Опыт работы -->
                                 <section class="resume-experience-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-briefcase me-2"></i>Опыт работы</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-briefcase me-2"></i>
+                                        <span data-ru="Опыт работы" data-en="Work Experience">Опыт работы</span>
+                                    </h3>
                                     <div class="resume-timeline position-relative">
-                                        <article class="resume-timeline-item position-relative pb-5">
+                                        <article class="resume-timeline-item position-relative pb-0">
                                             <div class="resume-timeline-item-header mb-2">
                                                 <div class="resume-position-meta d-flex justify-content-between mb-1">
-                                                    <div class="resume-position-time">Апрель 2021 - Настоящее время</div>
+                                                    <div class="resume-position-time"><span data-ru="Апрель 2021 - Настоящее время" data-en="April 2021 – Present">Апрель 2021 - Настоящее время</span></div>
                                                     <div class="resume-company-name">Middle+ QA Manual/Auto</div>
                                                 </div>
                                                 <h3 class="resume-position-title mb-1">Middle+ QA Manual/Auto</h3>
-                                                <h4 class="resume-position-title mb-1">Зона ответственности и достижения:</h4>
+                                                <h4 class="resume-position-title mb-1"><span data-ru="Зона ответственности и достижения:" data-en="Responsibilities and Achievements:">Зона ответственности и достижения:</span></h4>
                                             </div>
                                             <div class="resume-timeline-item-desc">
                                                 <ul class="resume-timeline-list">
-                                                    <li>Проектировал и развивал автотесты для web‑систем на Python/JavaScript (Playwright, BDD: behave, cucumber), обеспечив покрытие ключевых сценариев.</li>
-                                                    <li>Вёл 200+ тест‑кейсов в Xray и других TMS, выстроил регресс и интеграционное тестирование с устойчивым прохождением на уровне 90–95% и предсказуемыми сроками релизов.</li>
-                                                    <li>Стандартизировал QA‑документацию (онбординг‑гайды, чек‑листы, шаблоны тест‑документов), сократив время ввода новых тестировщиков и упростив масштабирование команд.</li>
-                                                    <li>Проводил функциональное, интеграционное и кросс‑браузерное тестирование (Chrome, Firefox, Safari, Edge, Yandex, Android‑клиенты) для высоконагруженных систем, обеспечивая стабильность ключевых пользовательских сценариев.</li>
-                                                    <li><strong>Разработал скрипт на Python + Playwright для автоматического измерения времени отклика ключевых сервисов, сократив ручную проверку с ~2 часов до 15 минут.</strong> Создал дашборд в Grafana с графиками по времени ответа и стабильности работы системы, на основе метрик выявил проблему в коде, из‑за которой часть страниц загружалась нестабильно и заметно дольше нормы.</li>
-                                                    <li>Тестировал функционал создания бумажного и цифрового документооборота в средах ЖКХ и страхования с интеграцией сторонних справочников.</li>
-                                                    <li>Тестировал REST/SOAP API с использованием Postman, Swagger и SoapUI для проверки корректности интеграций и ответов сервисов.</li>
-                                                    <li>Работал с базами данных (PostgreSQL, MongoDB, Oracle), писал SQL‑запросы с использованием JOIN и агрегирующих функций (COUNT и др.) для выборки, сверки и анализа данных.</li>
-                                                    <li>Анализировал логи в ELK, Logstash, Kibana, k8s‑pods и на удалённых серверах (SSH, tail, catalina) для диагностики поведения системы и локализации дефектов.</li>
-                                                    <li>Проводил комплексный анализ инцидентов на основе данных из API, БД и логов для поиска и устранения первопричин, участвовал в улучшении устойчивости сервисов.</li>
-                                                    <li><strong>Настроил и поддерживал выделенный Unix‑сервер для запуска рабочих скриптов и метрик по cron'у, обеспечив стабильное выполнение проверок и сбор технических показателей.</strong></li>
-                                                    <li>Использовал системы мониторинга (Zabbix, Grafana) и метрики производительности для оценки влияния релизов и выявления узких мест в работе сервисов.</li>
+                                                    <li><span data-ru="Проектировал и развивал автотесты для web‑систем на Python/JavaScript (Playwright, BDD: behave, cucumber), обеспечив покрытие ключевых сценариев." data-en="Designed and developed autotests for web systems using Python/JavaScript (Playwright, BDD: behave, cucumber), ensuring coverage of key scenarios.">Проектировал и развивал автотесты для web‑систем на Python/JavaScript (Playwright, BDD: behave, cucumber), обеспечив покрытие ключевых сценариев.</span></li>
+                                                    <li><span data-ru="Вёл 200+ тест‑кейсов в Xray и других TMS, выстроил регресс и интеграционное тестирование с устойчивым прохождением на уровне 90–95% и предсказуемыми сроками релизов." data-en="Managed 200+ test cases in Xray and other TMS, built regression and integration testing with a stable pass rate of 90–95% and predictable release schedules.">Вёл 200+ тест‑кейсов в Xray и других TMS, выстроил регресс и интеграционное тестирование с устойчивым прохождением на уровне 90–95% и предсказуемыми сроками релизов.</span></li>
+                                                    <li><span data-ru="Стандартизировал QA‑документацию (онбординг‑гайды, чек‑листы, шаблоны тест‑документов), сократив время ввода новых тестировщиков и упростив масштабирование команд." data-en="Standardized QA documentation (onboarding guides, checklists, test document templates), reducing onboarding time for new QA engineers and simplifying team scaling.">Стандартизировал QA‑документацию (онбординг‑гайды, чек‑листы, шаблоны тест‑документов), сократив время ввода новых тестировщиков и упростив масштабирование команд.</span></li>
+                                                    <li><span data-ru="Проводил функциональное, интеграционное и кросс‑браузерное тестирование (Chrome, Firefox, Safari, Edge, Yandex, Android‑клиенты) для высоконагруженных систем, обеспечивая стабильность ключевых пользовательских сценариев." data-en="Performed functional, integration, and cross-browser testing (Chrome, Firefox, Safari, Edge, Yandex, Android clients) for high-load systems, ensuring stability of key user scenarios.">Проводил функциональное, интеграционное и кросс‑браузерное тестирование (Chrome, Firefox, Safari, Edge, Yandex, Android‑клиенты) для высоконагруженных систем, обеспечивая стабильность ключевых пользовательских сценариев.</span></li>
+                                                    <li><strong><span data-ru="Разработал скрипт на Python + Playwright для автоматического измерения времени отклика ключевых сервисов, сократив ручную проверку с ~2 часов до 15 минут." data-en="Developed a Python + Playwright script for automatic response time measurement of key services, reducing manual checks from ~2 hours to 15 minutes.">Разработал скрипт на Python + Playwright для автоматического измерения времени отклика ключевых сервисов, сократив ручную проверку с ~2 часов до 15 минут.</span></strong> <span data-ru="Создал дашборд в Grafana с графиками по времени ответа и стабильности работы системы, на основе метрик выявил проблему в коде, из‑за которой часть страниц загружалась нестабильно и заметно дольше нормы." data-en="Created a Grafana dashboard with response time and system stability charts; based on metrics, identified a code issue causing certain pages to load unstably and significantly slower than normal.">Создал дашборд в Grafana с графиками по времени ответа и стабильности работы системы, на основе метрик выявил проблему в коде, из‑за которой часть страниц загружалась нестабильно и заметно дольше нормы.</span></li>
+                                                    <li><span data-ru="Тестировал функционал создания бумажного и цифрового документооборота в средах ЖКХ и страхования с интеграцией сторонних справочников." data-en="Tested paper and digital document management workflows in housing/utility and insurance environments with third-party directory integrations.">Тестировал функционал создания бумажного и цифрового документооборота в средах ЖКХ и страхования с интеграцией сторонних справочников.</span></li>
+                                                    <li><span data-ru="Тестировал REST/SOAP API с использованием Postman, Swagger и SoapUI для проверки корректности интеграций и ответов сервисов." data-en="Tested REST/SOAP APIs using Postman, Swagger, and SoapUI to verify integration correctness and service responses.">Тестировал REST/SOAP API с использованием Postman, Swagger и SoapUI для проверки корректности интеграций и ответов сервисов.</span></li>
+                                                    <li><span data-ru="Работал с базами данных (PostgreSQL, MongoDB, Oracle), писал SQL‑запросы с использованием JOIN и агрегирующих функций (COUNT и др.) для выборки, сверки и анализа данных." data-en="Worked with databases (PostgreSQL, MongoDB, Oracle), wrote SQL queries using JOINs and aggregation functions (COUNT, etc.) for data retrieval, reconciliation, and analysis.">Работал с базами данных (PostgreSQL, MongoDB, Oracle), писал SQL‑запросы с использованием JOIN и агрегирующих функций (COUNT и др.) для выборки, сверки и анализа данных.</span></li>
+                                                    <li><span data-ru="Анализировал логи в ELK, Logstash, Kibana, k8s‑pods и на удалённых серверах (SSH, tail, catalina) для диагностики поведения системы и локализации дефектов." data-en="Analyzed logs in ELK, Logstash, Kibana, k8s pods, and on remote servers (SSH, tail, catalina) for system behavior diagnostics and defect localization.">Анализировал логи в ELK, Logstash, Kibana, k8s‑pods и на удалённых серверах (SSH, tail, catalina) для диагностики поведения системы и локализации дефектов.</span></li>
+                                                    <li><span data-ru="Проводил комплексный анализ инцидентов на основе данных из API, БД и логов для поиска и устранения первопричин, участвовал в улучшении устойчивости сервисов." data-en="Conducted comprehensive incident analysis based on API data, databases, and logs to identify and eliminate root causes; participated in improving service reliability.">Проводил комплексный анализ инцидентов на основе данных из API, БД и логов для поиска и устранения первопричин, участвовал в улучшении устойчивости сервисов.</span></li>
+                                                    <li><strong><span data-ru="Настроил и поддерживал выделенный Unix‑сервер для запуска рабочих скриптов и метрик по cron'у, обеспечив стабильное выполнение проверок и сбор технических показателей." data-en="Set up and maintained a dedicated Unix server for running working scripts and cron-based metrics collection, ensuring stable execution of checks and technical data collection.">Настроил и поддерживал выделенный Unix‑сервер для запуска рабочих скриптов и метрик по cron'у, обеспечив стабильное выполнение проверок и сбор технических показателей.</span></strong></li>
+                                                    <li><span data-ru="Использовал системы мониторинга (Zabbix, Grafana) и метрики производительности для оценки влияния релизов и выявления узких мест в работе сервисов." data-en="Used monitoring systems (Zabbix, Grafana) and performance metrics to assess the impact of releases and identify service bottlenecks.">Использовал системы мониторинга (Zabbix, Grafana) и метрики производительности для оценки влияния релизов и выявления узких мест в работе сервисов.</span></li>
                                                 </ul>
                                             </div>
                                             <br>
-                                            <h4 class="resume-position-title mb-1">Ключевые проекты:</h4>
-                                            <b>Промышленное оборудование — фреймворк автотестов на Playwright</b>
+                                            <h4 class="resume-position-title mb-1"><span data-ru="Ключевые проекты:" data-en="Key Projects:">Ключевые проекты:</span></h4>
+                                            <b><span data-ru="Промышленное оборудование — фреймворк автотестов на Playwright" data-en="Industrial Equipment — Playwright Automation Framework">Промышленное оборудование — фреймворк автотестов на Playwright</span></b>
                                             <ul class="resume-timeline-list">
-                                                <li>Единолично спроектировал и реализовал архитектуру фреймворка автоматизации (Playwright + JavaScript + Cucumber) для эмулятора промышленного конвейерного оборудования.</li>
-                                                <li><strong>Реализовал BDD‑подход, автоматизировав около 80% бизнес‑сценариев и сократив трудозатраты на ручную проверку.</strong></li>
+                                                <li><span data-ru="Единолично спроектировал и реализовал архитектуру фреймворка автоматизации (Playwright + JavaScript + Cucumber) для эмулятора промышленного конвейерного оборудования." data-en="Independently designed and implemented the automation framework architecture (Playwright + JavaScript + Cucumber) for an industrial conveyor equipment emulator.">Единолично спроектировал и реализовал архитектуру фреймворка автоматизации (Playwright + JavaScript + Cucumber) для эмулятора промышленного конвейерного оборудования.</span></li>
+                                                <li><strong><span data-ru="Реализовал BDD‑подход, автоматизировав около 80% бизнес‑сценариев и сократив трудозатраты на ручную проверку." data-en="Implemented a BDD approach, automating around 80% of business scenarios and reducing manual testing effort.">Реализовал BDD‑подход, автоматизировав около 80% бизнес‑сценариев и сократив трудозатраты на ручную проверку.</span></strong></li>
                                             </ul>
                                             <br>
-                                            <b>Облачные технологии — управление серверами и виртуальными машинами</b>
+                                            <b><span data-ru="Облачные технологии — управление серверами и виртуальными машинами" data-en="Cloud Technologies — Server and Virtual Machine Management">Облачные технологии — управление серверами и виртуальными машинами</span></b>
                                             <ul class="resume-timeline-list">
-                                                <li>Тестировал систему для управления облачной инфраструктурой: функциональное и интеграционное тестирование.</li>
-                                                <li>Готовил комплексную тестовую документацию с покрытием до 90% функциональности, автоматизировал создание тестовых данных через Playwright + JavaScript.</li>
-                                                <li>Проводил API‑тестирование, проверял интеграции и состояния удалённых виртуальных серверов по SSH, анализировал логи и метрики.</li>
+                                                <li><span data-ru="Тестировал систему для управления облачной инфраструктурой: функциональное и интеграционное тестирование." data-en="Tested a cloud infrastructure management system: functional and integration testing.">Тестировал систему для управления облачной инфраструктурой: функциональное и интеграционное тестирование.</span></li>
+                                                <li><span data-ru="Готовил комплексную тестовую документацию с покрытием до 90% функциональности, автоматизировал создание тестовых данных через Playwright + JavaScript." data-en="Prepared comprehensive test documentation covering up to 90% of functionality, automated test data generation using Playwright + JavaScript.">Готовил комплексную тестовую документацию с покрытием до 90% функциональности, автоматизировал создание тестовых данных через Playwright + JavaScript.</span></li>
+                                                <li><span data-ru="Проводил API‑тестирование, проверял интеграции и состояния удалённых виртуальных серверов по SSH, анализировал логи и метрики." data-en="Performed API testing, verified integrations and remote virtual server states via SSH, analyzed logs and metrics.">Проводил API‑тестирование, проверял интеграции и состояния удалённых виртуальных серверов по SSH, анализировал логи и метрики.</span></li>
                                             </ul>
-                                            <h4 class="resume-position-title mb-1">Достижения:</h4>
+                                            <h4 class="resume-position-title mb-1"><span data-ru="Достижения:" data-en="Achievements:">Достижения:</span></h4>
                                             <ul class="resume-timeline-list">
-                                                <li>На основе анализа логов, воронки пользовательских сценариев и интеграционных ошибок подсветил проблемные места в цепочке партнёрских интеграций, что позволило сократить долю неуспешных бронирований и инцидентов.</li>
-                                                <li>Участвовал в онбординге и наставничестве новых QA‑инженеров: помогал осваивать тестовую документацию, регламент работы с логами, БД и интеграциями, за счёт чего снижалось время выхода на продуктивную работу.</li>
+                                                <li><span data-ru="На основе анализа логов, воронки пользовательских сценариев и интеграционных ошибок подсветил проблемные места в цепочке партнёрских интеграций, что позволило сократить долю неуспешных бронирований и инцидентов." data-en="Based on log analysis, user scenario funnels, and integration errors, identified bottlenecks in the partner integration chain, resulting in a reduction of failed bookings and incidents.">На основе анализа логов, воронки пользовательских сценариев и интеграционных ошибок подсветил проблемные места в цепочке партнёрских интеграций, что позволило сократить долю неуспешных бронирований и инцидентов.</span></li>
+                                                <li><span data-ru="Участвовал в онбординге и наставничестве новых QA‑инженеров: помогал осваивать тестовую документацию, регламент работы с логами, БД и интеграциями, за счёт чего снижалось время выхода на продуктивную работу." data-en="Participated in onboarding and mentoring new QA engineers: helped them learn test documentation, log-handling procedures, databases and integrations, reducing time to productivity.">Участвовал в онбординге и наставничестве новых QA‑инженеров: помогал осваивать тестовую документацию, регламент работы с логами, БД и интеграциями, за счёт чего снижалось время выхода на продуктивную работу.</span></li>
                                             </ul>
                                         </article>
                                     </div><!--//resume-timeline-->
                                 </section><!--//resume-experience-section-->
+
                             </div><!--//col-8-->
 
                             <!-- Правая колонка -->
                             <div class="col-12 col-lg-4 ps-lg-4">
-                                <!-- Технический стек (с прогресс-барами) -->
+                                <!-- Технический стек -->
                                 <section class="resume-skills-section resume-section">
                                     <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
-                                        <i class="resume-section-heading-icon bi bi-gear me-2"></i>Технический стек
+                                        <i class="resume-section-heading-icon bi bi-gear me-2"></i>
+                                        <span data-ru="Технический стек" data-en="Tech Stack">Технический стек</span>
                                     </h3>
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <div class="resume-skill-name">Python</div>
-                                            <div class="progress resume-progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar resume-progress-bar" style="width: 80%"></div>
-                                            </div>
+                                            <div class="text-muted small"><span data-ru="автотесты, скрипты, парсинг, работа с API" data-en="autotests, scripts, parsing, API integration">автотесты, скрипты, парсинг, работа с API</span></div>
                                         </li>
                                         <li class="mb-2">
                                             <div class="resume-skill-name">Playwright</div>
-                                            <div class="progress resume-progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar resume-progress-bar" style="width: 80%"></div>
-                                            </div>
+                                            <div class="text-muted small"><span data-ru="UI-автоматизация, BDD, замер производительности" data-en="UI automation, BDD, performance measurement">UI-автоматизация, BDD, замер производительности</span></div>
                                         </li>
                                         <li class="mb-2">
                                             <div class="resume-skill-name">JavaScript / TypeScript</div>
-                                            <div class="progress resume-progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar resume-progress-bar" style="width: 60%"></div>
-                                            </div>
+                                            <div class="text-muted small"><span data-ru="Playwright + Cucumber, автоматизация тестов" data-en="Playwright + Cucumber, test automation">Playwright + Cucumber, автоматизация тестов</span></div>
                                         </li>
                                         <li class="mb-2">
                                             <div class="resume-skill-name">SQL</div>
-                                            <div class="progress resume-progress" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar resume-progress-bar" style="width: 55%"></div>
-                                            </div>
+                                            <div class="text-muted small"><span data-ru="PostgreSQL, MongoDB, Oracle — JOIN, агрегации, анализ данных" data-en="PostgreSQL, MongoDB, Oracle — JOINs, aggregations, data analysis">PostgreSQL, MongoDB, Oracle — JOIN, агрегации, анализ данных</span></div>
                                         </li>
                                         <li class="mb-2">
                                             <div class="resume-skill-name">Git</div>
-                                            <div class="progress resume-progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar resume-progress-bar" style="width: 70%"></div>
-                                            </div>
+                                            <div class="text-muted small"><span data-ru="ветвление, code review, работа в команде" data-en="branching, code review, team collaboration">ветвление, code review, работа в команде</span></div>
                                         </li>
-                                        <li class="mb-2">
-                                            <div class="resume-skill-name">Java (RestAssured, базовый UI)</div>
-                                            <div class="progress resume-progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar resume-progress-bar" style="width: 30%"></div>
-                                            </div>
-                                        </li>
-                                        <!-- Добавим несколько важных технологий без прогресс-баров (как дополнение) -->
                                         <li class="mb-2">
                                             <div class="resume-skill-name">Docker / Kubernetes</div>
-                                            <div class="text-muted small">активно используется</div>
+                                            <div class="text-muted small"><span data-ru="контейнеризация, k8s-логи, тестовые окружения" data-en="containerization, k8s logs, test environments">контейнеризация, k8s-логи, тестовые окружения</span></div>
                                         </li>
                                         <li class="mb-2">
                                             <div class="resume-skill-name">CI/CD (GitLab CI, Jenkins)</div>
-                                            <div class="text-muted small">настройка пайплайнов</div>
+                                            <div class="text-muted small"><span data-ru="настройка пайплайнов, запуск автотестов" data-en="pipeline configuration, autotest execution">настройка пайплайнов, запуск автотестов</span></div>
                                         </li>
                                         <li class="mb-2">
                                             <div class="resume-skill-name">Unix / Linux</div>
-                                            <div class="text-muted small">настройка серверов, SSH, cron</div>
+                                            <div class="text-muted small"><span data-ru="настройка серверов, SSH, cron, работа с логами" data-en="server configuration, SSH, cron, log management">настройка серверов, SSH, cron, работа с логами</span></div>
                                         </li>
                                     </ul>
                                 </section>
 
                                 <hr>
 
-                                <!-- Профессиональные навыки (теги) – расширенные -->
+                                <!-- Профессиональные навыки (теги) -->
                                 <section class="resume-skills-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-person-gear me-2"></i>Проф. навыки</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-person-gear me-2"></i>
+                                        <span data-ru="Проф. навыки" data-en="Prof. Skills">Проф. навыки</span>
+                                    </h3>
                                     <ul class="list-inline">
-                                        <li class="list-inline-item"><span class="badge resume-skill-badge">Автоматизация тестирования</span></li>
-                                        <li class="list-inline-item"><span class="badge resume-skill-badge">Функциональное тестирование</span></li>
+                                        <li class="list-inline-item"><span class="badge resume-skill-badge"><span data-ru="Автоматизация тестирования" data-en="Test Automation">Автоматизация тестирования</span></span></li>
+                                        <li class="list-inline-item"><span class="badge resume-skill-badge"><span data-ru="Функциональное тестирование" data-en="Functional Testing">Функциональное тестирование</span></span></li>
                                         <li class="list-inline-item"><span class="badge resume-skill-badge">Playwright</span></li>
                                         <li class="list-inline-item"><span class="badge resume-skill-badge">Pytest</span></li>
                                         <li class="list-inline-item"><span class="badge resume-skill-badge">Python</span></li>
@@ -256,14 +306,17 @@
 
                                 <!-- Проекты -->
                                 <section class="resume-projects-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-code-slash me-2"></i>Проекты</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-code-slash me-2"></i>
+                                        <span data-ru="Проекты" data-en="Projects">Проекты</span>
+                                    </h3>
                                     <div class="item">
                                         <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://t.me/covletters_bot" target="_blank">@covletters_bot</a></h4>
-                                        <div class="item-desc">Telegram-бот на Python с интеграцией внешних API для генерации сопроводительных писем к резюме.</div>
+                                        <div class="item-desc"><span data-ru="Telegram-бот на Python с интеграцией внешних API для генерации сопроводительных писем к резюме." data-en="Python-based Telegram bot with external API integration for generating cover letters for resumes.">Telegram-бот на Python с интеграцией внешних API для генерации сопроводительных писем к резюме.</span></div>
                                     </div>
                                     <div class="item">
-                                        <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/weatherBot" target="_blank">Прогноз погоды</a></h4>
-                                        <div class="item-desc">Telegram-бот на JavaScript с интеграцией Yandex.Погода и Gismeteo.</div>
+                                        <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a href="https://github.com/shprd-v/weatherBot" target="_blank"><span data-ru="Прогноз погоды" data-en="Weather Forecast">Прогноз погоды</span></a></h4>
+                                        <div class="item-desc"><span data-ru="Telegram-бот на JavaScript с интеграцией Yandex.Погода и Gismeteo." data-en="JavaScript Telegram bot with Yandex Weather and Gismeteo integration.">Telegram-бот на JavaScript с интеграцией Yandex.Погода и Gismeteo.</span></div>
                                     </div>
                                 </section>
 
@@ -271,11 +324,14 @@
 
                                 <!-- Образование -->
                                 <section class="resume-educate-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-book me-2"></i>Образование</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-book me-2"></i>
+                                        <span data-ru="Образование" data-en="Education">Образование</span>
+                                    </h3>
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
-                                            <div class="resume-degree font-weight-bold">Институт информационных технологий и управления в технических системах</div>
-                                            <div class="resume-degree-org">Севастопольский национальный технический университет (СевНТУ)</div>
+                                            <div class="resume-degree font-weight-bold"><span data-ru="Институт информационных технологий и управления в технических системах" data-en="Institute of Information Technologies and Control in Technical Systems">Институт информационных технологий и управления в технических системах</span></div>
+                                            <div class="resume-degree-org"><span data-ru="Севастопольский национальный технический университет (СевНТУ)" data-en="Sevastopol National Technical University (SevNTU)">Севастопольский национальный технический университет (СевНТУ)</span></div>
                                             <div class="resume-degree-time">2013 - 2018</div>
                                         </li>
                                     </ul>
@@ -285,16 +341,19 @@
 
                                 <!-- Языки -->
                                 <section class="resume-lang-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-translate me-2"></i>Языки</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-translate me-2"></i>
+                                        <span data-ru="Языки" data-en="Languages">Языки</span>
+                                    </h3>
                                     <ul class="list-unstyled resume-lang-list">
                                         <li class="mb-2">
-                                            <div class="resume-lang-name">Русский</div>
+                                            <div class="resume-lang-name"><span data-ru="Русский" data-en="Russian">Русский</span></div>
                                             <div class="resume-level-indicator row gx-0 flex-nowrap">
                                                 <div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div>
                                             </div>
                                         </li>
                                         <li class="mb-2">
-                                            <div class="resume-lang-name">Английский</div>
+                                            <div class="resume-lang-name"><span data-ru="Английский" data-en="English">Английский</span></div>
                                             <div class="resume-level-indicator row gx-0 flex-nowrap">
                                                 <div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-full"></span></div><div class="col"><span class="item item-half"></span></div><div class="col"><span class="item"></span></div><div class="col"><span class="item"></span></div>
                                             </div>
@@ -302,16 +361,20 @@
                                     </ul>
                                 </section>
 
-                                <!-- Ссылки (дополнительно) -->
+                                <!-- Ссылки -->
                                 <section class="resume-projects-section resume-section">
-                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-link me-2"></i>Ссылки</h3>
+                                    <h3 class="resume-section-heading text-uppercase py-2 py-lg-3">
+                                        <i class="resume-section-heading-icon bi bi-link me-2"></i>
+                                        <span data-ru="Ссылки" data-en="Links">Ссылки</span>
+                                    </h3>
                                     <div class="item">
-                                        <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>Пример баг-репорта</h4>
+                                        <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><span data-ru="Пример баг-репорта" data-en="Bug Report Example">Пример баг-репорта</span></h4>
                                         <div class="item-desc">
-                                            <a href="src/page2.html">Пример с оформлением баг-репорта на странице</a>
+                                            <a href="src/page2.html"><span data-ru="Пример с оформлением баг-репорта на странице" data-en="Bug report formatting example page">Пример с оформлением баг-репорта на странице</span></a>
                                         </div>
                                     </div>
                                 </section>
+
                             </div><!--//col-side-->
                         </div><!--//row-->
                     </div><!--//resume-body-->
@@ -321,8 +384,8 @@
     
     </div><!--//container-->
 
-    <!-- Скрипт переключения темы (без изменений) -->
-    <script>
+    <!-- Theme toggle script -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         (function () {
             const body = document.body;
             const btn = document.getElementById('theme-toggle');
@@ -352,9 +415,62 @@
     
             btn.addEventListener('click', function () {
                 const isDark = body.classList.contains('dark-mode');
-                const nextTheme = isDark ? 'light' : 'dark';
-                applyTheme(nextTheme);
-                localStorage.setItem('theme', nextTheme);
+                const newTheme = isDark ? 'light' : 'dark';
+                applyTheme(newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        })();
+    </script>
+
+    <!-- Language toggle script -->
+    <script>
+        (function () {
+            // Current language state: 'ru' by default
+            let currentLang = localStorage.getItem('lang') || 'ru';
+
+            const langBtn = document.getElementById('lang-toggle');
+            const htmlEl = document.documentElement;
+            const wrapper = document.querySelector('.resume-wrapper');
+
+            // All translatable elements
+            const translatables = document.querySelectorAll('[data-ru][data-en]');
+
+            function applyLang(lang) {
+                // Fade out
+                if (wrapper) wrapper.classList.add('lang-switching');
+
+                setTimeout(function () {
+                    // Swap all text nodes
+                    translatables.forEach(function (el) {
+                        el.textContent = el.getAttribute('data-' + lang);
+                    });
+
+                    // Update html lang attribute
+                    htmlEl.setAttribute('lang', lang === 'ru' ? 'ru' : 'en');
+
+                    // Update button label
+                    if (lang === 'ru') {
+                        langBtn.innerHTML = '🇬🇧 EN';
+                        langBtn.title = 'Switch to English';
+                    } else {
+                        langBtn.innerHTML = '🇷🇺 RU';
+                        langBtn.title = 'Переключить на русский';
+                    }
+
+                    // Fade back in
+                    if (wrapper) wrapper.classList.remove('lang-switching');
+
+                    currentLang = lang;
+                    localStorage.setItem('lang', lang);
+                }, 180);
+            }
+
+            // Apply saved language on load
+            applyLang(currentLang);
+
+            // Toggle on click
+            langBtn.addEventListener('click', function () {
+                applyLang(currentLang === 'ru' ? 'en' : 'ru');
             });
         })();
     </script>
