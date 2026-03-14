@@ -84,7 +84,9 @@
             background: #265080;
         }
 
-        /* Fade transition on language switch */
+        body.dark-mode .text-muted {
+            color: #adb5bd !important;
+        }
         .resume-wrapper {
             transition: opacity 0.18s ease;
         }
@@ -113,7 +115,7 @@
                                     🌙
                                 </button>
                                 <button id="lang-toggle" type="button">
-                                    🇬🇧 EN
+                                    🇬🇧 English
                                 </button>
                             </div>
                             <h2 class="resume-name text-uppercase">Владимир Капустин</h2>
@@ -385,7 +387,7 @@
     </div><!--//container-->
 
     <!-- Theme toggle script -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         (function () {
             const body = document.body;
             const btn = document.getElementById('theme-toggle');
@@ -450,10 +452,10 @@
 
                     // Update button label
                     if (lang === 'ru') {
-                        langBtn.innerHTML = '🇬🇧 EN';
+                        langBtn.innerHTML = '🇬🇧 English';
                         langBtn.title = 'Switch to English';
                     } else {
-                        langBtn.innerHTML = '🇷🇺 RU';
+                        langBtn.innerHTML = '🇷🇺 Русский';
                         langBtn.title = 'Переключить на русский';
                     }
 
